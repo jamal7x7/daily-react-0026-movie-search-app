@@ -1,0 +1,185 @@
+$bg: #1D1C23
+$bgm: #062659
+$bgd: #041A3E
+$main: #EEE
+$purplish: #DB8EDA
+$bgl: #073175
+$bluew: #5E85C3
+$pink: #DD8EDA
+$blue: #42A3F9
+
+$grad:  linear-gradient(225deg, $pink -11%, $blue 100%)
+$gradl:  linear-gradient(225deg, $pink -30%, $blue 100%)
+
+$xxl: 58px
+$xl: 34px
+$l: 22px
+$m: 16px
+$s: 14px
+$xs: 11px
+
+
+$tt: 0.25s
+
+$main-font: 'Montserrat-Regular', 'Gotham', 'open sans', 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+body 
+  background: $bgm
+  font-family: $main-font
+  color: $main
+  
+.App-header 
+  height: 100px
+  padding: 20px
+  color: white
+  display: flex
+  justify-content: center
+  align-items: center
+  
+.App-title 
+  font-size: 1.5em
+  text-align: center
+  font-size: 24px
+  font-weight: 300
+
+.movie-search-con
+  width: 600px
+  height: 700px
+  margin: 0 auto
+  border: 1px solid rgba($bgm, 0.3)
+  background-color: $bgl
+  ::selection
+      // opacity: 0
+      background: $bgm
+  box-shadow: 0 90px 100px -50px rgba(black, 0.4) , 0 50px 70px 10px rgba(black, 0.1)
+  display: grid
+  grid-template-columns: auto
+  grid-template-rows: 144px 1fr
+  grid-template-areas: ' search-con '  ' items-con '
+  
+  .search-con
+    grid-area: search-con
+    // background: rgba($bgd, 0.15)
+    display: flex
+    justify-content: center
+    align-items: center
+
+    
+    .search-wrap
+      grid-area: serach-wrap
+      display: grid
+      grid-template-columns: 380px 100px 
+      grid-template-rows: 1fr
+      grid-template-areas: ' search view '
+
+      .search
+        grid-area: search
+        background: rgba(black, 0.05)
+        border: none
+        border-radius: 25px
+        padding-left: 30px
+        color: rgba($pink, 0.5)
+        outline: none
+        font-size: $m
+        
+      .view
+        grid-area: view
+        height: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        .list
+          margin-left: 20px
+          cursor: pointer
+        .big
+          cursor: pointer
+          margin-left: 20px
+          
+              
+       
+
+
+  .items-con
+    grid-area: items-con
+    
+    .movie
+      height: 190px
+      background: rgba(white, 0.02)
+      display: grid
+      grid-template-columns: 150px 1fr 120px 
+      grid-template-rows: 1fr
+      grid-template-areas: ' movie-poster movie-details star-meter '
+      .movie-poster
+        grid-area: movie-poster
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          height: 150px
+          width: 100px
+      .movie-details
+        grid-area: movie-details
+        display: flex
+        justify-content: center
+        align-items: center
+      .star-meter
+        grid-area: star-meter
+        display: flex
+        justify-content: center
+        align-items: center
+      
+    
+
+
+
+
+
+.radioButton
+  width: 40%
+
+  label
+    float: left
+    width: 100%
+
+    span
+      text-align: left
+      display: block
+      transition: all 0.3s ease-out
+
+    input
+      position: absolute
+      -webkit-appearance: none
+      -moz-appearance:    none
+      appearance:         none
+
+      & svg
+        opacity: 0.1
+
+      &:hover + svg g
+        background-color: $bgl
+        -webkit-transform: scale(1)
+        -ms-transform: scale(1)
+        transform: scale(1)
+        fill: rgba(white, 0.4)
+        opacity: 1
+      
+
+      &:checked + svg g
+        animation: tick 200ms ease
+        background: $bgl
+        fill: #DD8EDA
+        opacity: 1
+
+
+
+@keyframes tick
+  0%
+    transform: scale(1)
+    background-color: $pink
+  70%
+    transform: scale(1.05)
+    background-color: black
+  100%
+    transform: scale(1)
+    background-color: white
+
