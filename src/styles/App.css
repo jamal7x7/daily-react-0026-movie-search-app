@@ -1,7 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #062659;
-  font-family: "Montserrat-Regular", "Gotham", "open sans", "Lato", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Avenir Next", "Gotham", "open sans", "Lato", "Gill Sans", "Gill Sans MT", Arial, Calibri, "Trebuchet MS", sans-serif;
   color: #EEE;
+  letter-spacing: 1px;
 }
 
 .App-header {
@@ -28,7 +34,7 @@ body {
 
 .movie-search-con {
   width: 600px;
-  height: 700px;
+  height: 800px;
   margin: 0 auto;
   border: 1px solid rgba(6, 38, 89, 0.3);
   background-color: #073175;
@@ -44,11 +50,11 @@ body {
 }
 
 .movie-search-con ::-moz-selection {
-  background: #062659;
+  background: #073175;
 }
 
 .movie-search-con ::selection {
-  background: #062659;
+  background: #073175;
 }
 
 .movie-search-con .search-con {
@@ -158,15 +164,34 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: movie-details;
+  margin-top: 50px;
+}
+
+.movie-search-con .items-con .movie .movie-details .movie-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.movie-search-con .items-con .movie .movie-details .movie-details-sub {
+  margin: 2px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.27);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.movie-search-con .items-con .movie .movie-details .movie-details-sub .ghost {
+  margin: 0 10px;
+  color: rgba(221, 142, 218, 0.4);
+}
+
+.movie-search-con .items-con .movie .movie-details .movie-genre {
+  font-size: 14px;
+  color: rgba(221, 142, 218, 0.4);
 }
 
 .movie-search-con .items-con .movie .star-meter {
